@@ -1,0 +1,21 @@
+{% extends "base_generic.html" %}
+
+{% block title %}<title>Статистика по приложению</title>{% endblock %}
+
+{% block content %}
+<h1>Local Library Home</h1>
+
+  <p>Добро пожаловать<em>LocalLibrary</em> на страницу .</p>
+
+<h2>Dynamic content</h2>
+
+  <p>The library has the following record counts:</p>
+  <ul>
+    <li><strong>Партнёров:</strong> {{ num_partner }}</li>
+    <li><strong>Регионов:</strong> {{ num_region }}</li>
+    <li><strong>Заявок на демодоступ:</strong> {{ num_demo_requests }}</li>
+  </ul>
+
+    <p>Благодарим за заявку! В ближайшее время с вами свяжется представитель компании в Вашем регионе.</p>
+
+{% endblock %}
