@@ -25,6 +25,8 @@ urlpatterns = [
     path('requests/', include('b24.urls')),
     path('', RedirectView.as_view(url='requests/', permanent=True)),
     path('demo/', include('b24.urls')),
+    path('token_validation/', include('b24.urls')),
+    path('thanks/', include('b24.urls'))
 
 ]
 

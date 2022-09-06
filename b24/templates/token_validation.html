@@ -1,0 +1,44 @@
+{% extends "base_generic.html" %}
+
+{% block title %}<title>Статистика по приложению</title>{% endblock %}
+
+{% block content %}
+<h1>Система сбора и распределения заявок</h1>
+
+  <p>Это прототип веб-приложеия для сбора заявок пользователей и интеграции их в партнёрские CRM-системы.</p>
+
+<h2>Подтверждение телефона по заявке:</h2>
+
+<!--  <p>Список основных сущностей используемых в БД.</p>-->
+<!--  <ul>-->
+<!--    <li><strong>Партнёров:</strong> {{ num_partner }}</li>-->
+<!--    <li><strong>Регионов:</strong> {{ num_region }}</li>-->
+<!--    <li><strong>Заявок на демодоступ:</strong> {{ num_demo_requests }}</li>-->
+<!--  </ul>-->
+
+<!--  <p>Заявка:</p>-->
+  <ul>
+    <li><strong>Номер:</strong> {{ request_phone }}</li>
+    <li><strong>Имя:</strong> {{ request_name }}</li>
+    <li><strong>Регион:</strong> {{ request_region }}</li>
+  </ul>
+
+<h2>Форма</h2>
+
+    <p>Форма для валидации введённого телефона.</p>
+
+    <div class="form-group" style="width: 40%">
+        {% if messages %}
+            {% for message in messages %}
+                <p>{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+        <form action="" method="post">
+            {% csrf_token %}
+<!--            <table>-->
+            {{ form }}
+<!--            </table>-->
+            <input type="submit" value="Submit" />
+        </form>
+    </div>
+{% endblock %}
